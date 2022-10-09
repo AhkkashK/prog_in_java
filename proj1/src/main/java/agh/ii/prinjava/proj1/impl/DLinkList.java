@@ -23,10 +23,19 @@ public class DLinkList<E> {
         }
     }
 
+    /**
+     *DLinkList constructor
+     * */
+
     public DLinkList(){
         first = null;
         last = null;
     }
+
+    /**
+     * add a node at the start with a value given
+     * @param e
+     * */
 
     public void addFirst(E e){
         if(first != null){
@@ -41,6 +50,11 @@ public class DLinkList<E> {
         }
         n++;
     }
+
+    /**
+     * add a node at the end with a value given
+     * @param e
+     * */
 
     public void addLast(E e){
         if(first != null){
@@ -59,6 +73,11 @@ public class DLinkList<E> {
             n++;
         }
     }
+
+    /**
+     * remove the starting node
+     * @return return value of the removed node
+     * */
 
     public E removeFirst(){
         if(first != null){
@@ -81,6 +100,11 @@ public class DLinkList<E> {
             return null;
         }
     }
+
+    /**
+     * remove the end node
+     * @return return value of the removed node
+     * */
 
     public E removeLast(){
         if((first != null)&&(last!= null)){
@@ -112,6 +136,9 @@ public class DLinkList<E> {
         return last.elem;
     }
 
+    /**
+     * display the DLinkList
+     * */
     public String toString() {
         String result = " ";
         Node<E> current = first;
