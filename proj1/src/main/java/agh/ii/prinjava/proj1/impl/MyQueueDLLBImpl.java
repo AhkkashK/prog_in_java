@@ -3,25 +3,49 @@ package agh.ii.prinjava.proj1.impl;
 import agh.ii.prinjava.proj1.MyQueue;
 
 public class MyQueueDLLBImpl<E> implements MyQueue<E> {
-    private DLinkList<E> elems;
+    public DLinkList<E> elems;
+
 
     @Override
     public void enqueue(E x) {
-        throw new IllegalStateException("To be implemented");
+        if(elems == null){
+            elems = new DLinkList<>();
+        }
+        elems.addLast(x);
     }
 
     @Override
     public E dequeue() {
-        throw new IllegalStateException("To be implemented");
+        if(elems!=null){
+            return elems.removeFirst();
+        }
+        return null;
     }
 
     @Override
     public int numOfElems() {
-        return 0;
+        return elems.n;
     }
 
     @Override
     public E peek() {
-        throw new IllegalStateException("To be implemented");
+        return elems.getFirst();
+    }
+
+
+
+    public DLinkList<E> getElems() {
+        return elems;
+    }
+
+    public static void main(String[] args) {
+        MyQueue<Integer> q = MyQueue.create();
+        q.enqueue(5);
+        q.enqueue(9);
+        DLinkList<Integer> value= q.getElems();
+        System.out.println(value.getFirst());
+        System.out.println(value);
+
+
     }
 }

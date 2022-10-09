@@ -22,6 +22,7 @@ public class DLinkList<E> {
             prev = null;
         }
     }
+
     public DLinkList(){
         first = null;
         last = null;
@@ -59,7 +60,6 @@ public class DLinkList<E> {
         }
     }
 
-
     public E removeFirst(){
         if(first != null){
             E value = first.elem;
@@ -82,8 +82,6 @@ public class DLinkList<E> {
         }
     }
 
-
-
     public E removeLast(){
         if((first != null)&&(last!= null)){
             E value = last.elem;
@@ -105,9 +103,6 @@ public class DLinkList<E> {
         return null;
     }
 
-    public int getN() {
-        return n;
-    }
 
     public E getFirst() {
         return first.elem;
@@ -116,24 +111,48 @@ public class DLinkList<E> {
     public E getLast() {
         return last.elem;
     }
-    /* @Override
+
     public String toString() {
-        String copy = "[";
-        if(first!= null){
-            Node<E> temp = first;
-            for(int i =0;i<n;i++){
-                copy = copy + " "
+        String result = " ";
+        Node<E> current = first;
+        if (first == null) {
+            System.out.println( "No node");
+            return null;
+        } else {
+
+            while (current.next != null) {
+                result += current.elem;
+                result += " -> ";
+                current = current.next;
             }
+            return "List: " + result + current.elem;
         }
-    }*/
+    }
 
     public static void main(String[] args) {
-        DLinkList<Integer> dll = new DLinkList<>();
+        /*DLinkList<Integer> dll = new DLinkList<>();
         Node<Integer> temp = dll.first;
         dll.addFirst(1);
-        System.out.println(dll.removeFirst());
-        System.out.println(dll.removeFirst());
+        dll.addFirst(8);
+        dll.addFirst(66);
+        System.out.println(dll);
+        dll.removeFirst();
+        dll.removeFirst();
 
+        System.out.println(dll);
+        dll.removeFirst();
+        System.out.println(dll);*/
+
+        DLinkList<Integer> dll = new DLinkList<>();
+        dll.addFirst(1);
+        dll.addFirst(8);
+        dll.addFirst(66);
+        System.out.println(dll);
+        dll.removeFirst();
+        dll.removeFirst();
+        System.out.println(dll);
+        dll.removeFirst();
+      //  System.out.println(dll);
     }
 
 

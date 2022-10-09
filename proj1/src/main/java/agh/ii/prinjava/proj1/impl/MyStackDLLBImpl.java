@@ -7,21 +7,31 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
 
     @Override
     public E pop() {
-        throw new IllegalStateException("To be implemented");
+        if(elems!=null){
+            return elems.removeFirst();
+        }
+        return null;
     }
 
     @Override
     public void push(E x) {
-        throw new IllegalStateException("To be implemented");
+        if(elems == null){
+            elems = new DLinkList<>();
+        }
+        elems.addFirst(x);
     }
 
     @Override
     public int numOfElems() {
-        throw new IllegalStateException("To be implemented");
+        return elems.n;
     }
 
     @Override
     public E peek() {
-        throw new IllegalStateException("To be implemented");
+        return elems.getFirst();
+    }
+
+    public DLinkList<E> getElems() {
+        return elems;
     }
 }
