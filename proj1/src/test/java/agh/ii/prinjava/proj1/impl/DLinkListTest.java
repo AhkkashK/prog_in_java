@@ -121,6 +121,6 @@ class DLinkListTest {
         dll.removeFirst();
         System.out.println(dll);
         dll.removeFirst();
-       System.out.println(dll);// fera une erreur car peut rien afficher
+      /* System.out.println(dll);// fera une erreur car peut rien afficher*/
     }
 }
