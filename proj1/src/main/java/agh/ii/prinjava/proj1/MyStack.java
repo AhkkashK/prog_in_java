@@ -32,5 +32,4 @@ public interface MyStack<E> {
         return new MyStackDLLBImpl<T>();
     }
 
-
 }
