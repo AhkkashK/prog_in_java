@@ -2,8 +2,15 @@ package agh.ii.prinjava.proj1.impl;
 
 import agh.ii.prinjava.proj1.MyQueue;
 
+import java.util.NoSuchElementException;
+
 public class MyQueueDLLBImpl<E> implements MyQueue<E> {
-    public DLinkList<E> elems;
+
+    /**
+     * elems is a DLL
+     * */
+
+    private DLinkList<E> elems;
 
 
     /**
@@ -30,7 +37,7 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
         if(elems!=null){
             return elems.removeFirst();
         }
-        return null;
+        throw new NoSuchElementException("No node");
     }
 
     /**
@@ -50,7 +57,10 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
 
     @Override
     public E peek() {
-        return elems.getFirst();
+        if((elems!=null)&&(elems.first!=null)){
+            return elems.getFirst();
+        }
+        throw new NoSuchElementException("No node");
     }
 
     /**
@@ -59,16 +69,26 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
      * */
 
     public DLinkList<E> getElems() {
-        return elems;
+        if(elems!=null){
+            return elems;
+        }
+        throw new NoSuchElementException("No node");
+    }
+
+    @Override
+    public String toString() {
+        if(elems!=null) return elems.toString();
+        throw new NoSuchElementException("No node");
     }
 
     public static void main(String[] args) {
         MyQueue<Integer> q = MyQueue.create();
         q.enqueue(5);
         q.enqueue(9);
-        DLinkList<Integer> value= q.getElems();
+        System.out.println(q.toString());
+        /*DLinkList<Integer> value= q.getElems();
         System.out.println(value.getFirst());
-        System.out.println(value);
+        System.out.println(value);*/
 
 
     }

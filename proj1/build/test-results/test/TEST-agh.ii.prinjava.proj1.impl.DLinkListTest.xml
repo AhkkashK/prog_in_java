@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="agh.ii.prinjava.proj1.impl.DLinkListTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-10-09T12:45:40" hostname="LAPTOP-7K6JR2KO" time="0.046">
+<testsuite name="agh.ii.prinjava.proj1.impl.DLinkListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-17T01:04:22" hostname="LAPTOP-7K6JR2KO" time="0.022">
   <properties/>
-  <testcase name="addFirst()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.028"/>
-  <testcase name="addLast()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.001"/>
-  <testcase name="testToString()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.01"/>
-  <testcase name="removeFirst()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.002"/>
-  <testcase name="removeLast()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.001"/>
+  <testcase name="testToString()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.022"/>
   <system-out><![CDATA[List:  66 -> 8 -> 1
 List:  1
-4
-there is no node, so no node to remove
-4
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

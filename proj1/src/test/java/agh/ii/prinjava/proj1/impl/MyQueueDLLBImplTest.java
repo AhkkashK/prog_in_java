@@ -30,6 +30,7 @@ class MyQueueDLLBImplTest {
         queueOfInts.enqueue(45);
         assertEquals(queueOfInts.peek(),74);
         queueOfInts.enqueue(66);
+        System.out.println(queueOfInts);
         assertEquals(queueOfInts.peek(),74); // check if the peek value is 74
         DLinkList<Integer> s = queueOfInts.getElems();
         System.out.println(s); // to be sure that it's a stack composed like : 74 -> 45 -> 66
@@ -86,7 +87,23 @@ class MyQueueDLLBImplTest {
         queueOfInts.enqueue(5);
         assertEquals(queueOfInts.peek(),5);
         queueOfInts.dequeue();
-       // assertNull(queueOfInts.peek());
+        //assertNull(queueOfInts.peek());
         // if you delete the "//" you can see that we can't reach the peek because there is no node; (null)
+    }
+
+    /**
+     * test ToString
+     * */
+
+    @Test
+    void testToString() {
+        queueOfInts.enqueue(74);
+        queueOfInts.enqueue(45);
+        System.out.println(queueOfInts);
+        queueOfInts.dequeue();
+        System.out.println(queueOfInts);
+        queueOfInts.dequeue();
+        System.out.println(queueOfInts);  // error because there is node
+
     }
 }

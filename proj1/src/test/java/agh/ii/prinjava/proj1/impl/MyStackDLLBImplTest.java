@@ -5,6 +5,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.concurrent.ExecutionException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MyStackDLLBImplTest {
@@ -17,6 +19,10 @@ class MyStackDLLBImplTest {
     @AfterEach
     void tearDown() {
     }
+
+    /**
+     * Test of the pop method used to pop a node from the Stack
+     */
 
     @Test
     void pop() {
@@ -42,6 +48,10 @@ class MyStackDLLBImplTest {
 
     }
 
+    /**
+     * Test of the push method used to push a node into the Stack
+     */
+
     @Test
     void push() {
         stackOfInts.push(74);
@@ -55,6 +65,11 @@ class MyStackDLLBImplTest {
         assertEquals(stackOfInts.numOfElems(),3);
     }
 
+    /**
+     * This test show us that the numOfElems method works pretty well.
+     * Indeed, we push one node so there is one element in the Stack.
+     * Then, we pop this node. It makes the Stack empty, with 0 node.
+     */
     @Test
     void numOfElems() {
         stackOfInts.push(5);
@@ -63,11 +78,37 @@ class MyStackDLLBImplTest {
         assertEquals(stackOfInts.numOfElems(),0);
     }
 
+    /**
+     * This test verify that the peek method works well.
+     * We push one node, we make sure that the peeked node is the one we just pushed.
+     */
+
     @Test
     void peek() {
         stackOfInts.push(5);
         assertEquals(stackOfInts.peek(),5);
         stackOfInts.pop();
-        // assertNull(queueOfInts.peek());
+        try{
+            assertNull(stackOfInts.peek());
+        }catch(Exception e){
+            System.out.println("in catch,no node");
+        }
+
+    }
+
+    @Test
+    void testToString() {
+        stackOfInts.push(5);
+        stackOfInts.push(11);
+        System.out.println(stackOfInts);
+        stackOfInts.pop();
+        System.out.println(stackOfInts);
+        stackOfInts.pop();
+        try{
+            System.out.println(stackOfInts);
+        }catch (Exception e){
+            System.out.println(" in catch , no node");
+        }
+
     }
 }

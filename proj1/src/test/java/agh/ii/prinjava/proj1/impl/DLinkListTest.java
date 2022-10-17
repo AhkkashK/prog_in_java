@@ -135,6 +135,9 @@ class DLinkListTest {
         dll.removeFirst();
         System.out.println(dll);
         dll.removeFirst();
-        System.out.println(dll);// error because there is no node , return null
+        //System.out.println(dll);// error because there is no node , return null
+
+
+
     }
 }

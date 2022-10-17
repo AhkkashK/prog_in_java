@@ -1,4 +1,6 @@
 rootProject.name = 'prog_in_java'
 include 'lab00'
 include 'proj1'
+include 'lab04'
+include 'lab05'
 

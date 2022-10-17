@@ -9,10 +9,12 @@ import agh.ii.prinjava.proj1.impl.MyQueueDLLBImpl;
  * */
 
 public interface MyQueue<E> {
+
     /**
      * add a node at the end of the queue  with a value given
      * @param x value
      * */
+
     void enqueue(E x);
 
     /**
@@ -36,6 +38,7 @@ public interface MyQueue<E> {
     /**
      *@return  returns number of node in queue
      * */
+
     int numOfElems();
 
     /**
@@ -44,9 +47,10 @@ public interface MyQueue<E> {
 
     E peek();
 
+     DLinkList<E> getElems();
 
 
-    public DLinkList<E> getElems();
+
 
     /** Consider pros and cons of having a factory method in the interface */
     static <T> MyQueue<T> create() {
